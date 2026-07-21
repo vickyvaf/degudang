@@ -169,9 +169,7 @@
 
   <!-- Hero Section -->
   <section class="relative h-screen hero-min-height flex items-center overflow-hidden bg-cream pt-20" id="hero">
-    <video autoplay loop muted playsinline class="hero-video-bg">
-      <source src="assets/videos/hero-video.mp4" type="video/mp4">
-    </video>
+    <video autoplay loop muted playsinline class="hero-video-bg" id="hero-video"></video>
     <div class="relative z-10 w-11/12 max-w-6xl mx-auto">
       <div class="flex justify-center items-center text-center w-full">
         <div class="z-10 max-w-3xl flex flex-col items-center">
@@ -952,6 +950,54 @@
         });
       });
     });
+
+    // ponytail: Cache hero video locally using Cache API with 7 days TTL (stored in custom headers, no localStorage)
+    async function initCachedVideo() {
+      const videoEl = document.getElementById('hero-video');
+      const videoUrl = 'assets/videos/hero-video.mp4';
+      const cacheName = 'degudang-video-cache';
+      const ttl = 7 * 24 * 60 * 60 * 1000; // 7 days in milliseconds
+
+      try {
+        const cache = await caches.open(cacheName);
+        const cachedResponse = await cache.match(videoUrl);
+        const now = Date.now();
+
+        let cachedTime = null;
+        if (cachedResponse) {
+          cachedTime = cachedResponse.headers.get('x-cache-date');
+        }
+
+        if (cachedResponse && cachedTime && (now - parseInt(cachedTime, 10) < ttl)) {
+          const blob = await cachedResponse.blob();
+          videoEl.src = URL.createObjectURL(blob);
+        } else {
+          const response = await fetch(videoUrl);
+          if (response.ok) {
+            // Buat response baru dengan custom header x-cache-date untuk menyimpan waktu cache
+            const blob = await response.blob();
+            const headers = new Headers(response.headers);
+            headers.append('x-cache-date', now.toString());
+
+            const responseToCache = new Response(blob, {
+              status: response.status,
+              statusText: response.statusText,
+              headers: headers
+            });
+
+            await cache.put(videoUrl, responseToCache);
+            videoEl.src = URL.createObjectURL(blob);
+          } else {
+            throw new Error('Network response was not OK');
+          }
+        }
+      } catch (error) {
+        console.warn('Video Cache API failed, falling back to network:', error);
+        videoEl.src = videoUrl;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', initCachedVideo);
   </script>
 </body>
 
