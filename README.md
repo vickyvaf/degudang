@@ -1,5 +1,8 @@
 # deGudang Cafe & Roastery Website
 
+<img width="1424" height="781" alt="Screenshot 2026-07-21 at 21 22 04" src="https://github.com/user-attachments/assets/282d3fb3-c99c-4929-9d5a-e247ffd74b40" />
+
+
 A clean, responsive, single-page landing website for **deGudang Cafe & Roastery** located in Lumajang, Jawa Timur.
 
 **deGudang** is a cozy neighborhood cafe and roastery known for its hand-roasted specialty coffees, fresh daily-baked pastries, and inviting community atmosphere under the tagline *"Relax and Fun"*.
