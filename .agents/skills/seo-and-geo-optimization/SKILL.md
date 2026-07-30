@@ -48,9 +48,9 @@ For the main landing page, include a `Restaurant` schema:
   "@context": "https://schema.org",
   "@type": "Restaurant",
   "name": "deGudang Cafe & Roastery",
-  "image": "https://degudang.com/assets/images/degudang.png",
-  "@id": "https://degudang.com",
-  "url": "https://degudang.com",
+  "image": "https://degudang.netlify.app/assets/images/degudang.png",
+  "@id": "https://degudang.netlify.app",
+  "url": "https://degudang.netlify.app",
   "telephone": "+62...",
   "address": {
     "@type": "PostalAddress",
@@ -107,10 +107,10 @@ Sitelinks (seperti tampilan menu navigasi tambahan di hasil pencarian Google) di
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "deGudang",
-    "url": "https://degudang.com",
+    "url": "https://degudang.netlify.app",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://degudang.com/?q={search_term_string}",
+      "target": "https://degudang.netlify.app/?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   },
@@ -127,12 +127,12 @@ Sitelinks (seperti tampilan menu navigasi tambahan di hasil pencarian Google) di
       "Contact"
     ],
     "url": [
-      "https://degudang.com/#hero",
-      "https://degudang.com/#about",
-      "https://degudang.com/#menu",
-      "https://degudang.com/#instagram",
-      "https://degudang.com/#footer",
-      "https://degudang.com/#footer"
+      "https://degudang.netlify.app/#hero",
+      "https://degudang.netlify.app/#about",
+      "https://degudang.netlify.app/#menu",
+      "https://degudang.netlify.app/#instagram",
+      "https://degudang.netlify.app/#footer",
+      "https://degudang.netlify.app/#footer"
     ]
   }
 ]

@@ -9,17 +9,119 @@
     content="Welcome to deGudang, a cozy neighborhood cafe in Lumajang offering hand-roasted specialty coffee, fresh artisanal pastries, and a warm atmosphere.">
   <link rel="icon" type="image/png" href="assets/images/degudang.png">
 
-  <!-- Open Graph -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow">
+  <meta name="google-site-verification" content="google42bfa06bf6c53cd2">
+  <link rel="canonical" href="https://degudang.netlify.app/">
+
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="deGudang" />
+  <meta property="og:url" content="https://degudang.netlify.app/" />
   <meta property="og:title" content="deGudang - Cozy Cafe & Roastery" />
   <meta property="og:description"
     content="Welcome to deGudang, a cozy neighborhood cafe in Lumajang offering hand-roasted specialty coffee, fresh artisanal pastries, and a warm atmosphere." />
-  <meta property="og:image" content="/assets/images/degudang.png" />
+  <meta property="og:image" content="https://degudang.netlify.app/assets/images/degudang.png" />
+
+  <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://degudang.netlify.app/" />
   <meta property="twitter:title" content="deGudang - Cozy Cafe & Roastery" />
   <meta property="twitter:description"
     content="Welcome to deGudang, a cozy neighborhood cafe in Lumajang offering hand-roasted specialty coffee, fresh artisanal pastries, and a warm atmosphere." />
-  <meta property="twitter:image" content="/assets/images/degudang.png" />
+  <meta property="twitter:image" content="https://degudang.netlify.app/assets/images/degudang.png" />
+
+  <!-- Structured Data (JSON-LD) for SEO & GEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["Restaurant", "CafeOrCoffeeShop"],
+    "@id": "https://degudang.netlify.app/#restaurant",
+    "name": "deGudang Cafe & Roastery",
+    "alternateName": ["deGudang Lumajang", "deGudang Cafe"],
+    "image": "https://degudang.netlify.app/assets/images/degudang.png",
+    "url": "https://degudang.netlify.app/",
+    "telephone": "+6282289708444",
+    "priceRange": "$$",
+    "servesCuisine": ["Coffee", "Bakery", "Indonesian"],
+    "description": "Welcome to deGudang, a cozy neighborhood cafe in Lumajang offering hand-roasted specialty coffee, fresh artisanal pastries, and a warm atmosphere.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Dsn. Wringin Cilik, Gentengsari, Pulo, Kec. Tempeh",
+      "addressLocality": "Lumajang",
+      "addressRegion": "Jawa Timur",
+      "postalCode": "67371",
+      "addressCountry": "ID"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -8.1746228,
+      "longitude": 113.1559376
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.7",
+      "reviewCount": "156"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "15:00",
+        "closes": "23:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday", "Sunday"],
+        "opens": "08:00",
+        "closes": "23:00"
+      }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/degudang",
+      "https://www.tiktok.com/@degudang"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://degudang.netlify.app/#website",
+      "name": "deGudang",
+      "alternateName": "deGudang Cafe & Roastery",
+      "url": "https://degudang.netlify.app/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://degudang.netlify.app/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SiteNavigationElement",
+      "@id": "https://degudang.netlify.app/#navigation-menu",
+      "name": [
+        "Home",
+        "Our Story",
+        "Menu",
+        "Gallery",
+        "Location",
+        "Contact"
+      ],
+      "url": [
+        "https://degudang.netlify.app/#hero",
+        "https://degudang.netlify.app/#about",
+        "https://degudang.netlify.app/#menu",
+        "https://degudang.netlify.app/#instagram",
+        "https://degudang.netlify.app/#footer",
+        "https://degudang.netlify.app/#footer"
+      ]
+    }
+  ]
+  </script>
 
   <!-- Tailwind Play CDN (v3) -->
   <script src="https://cdn.tailwindcss.com"></script>
